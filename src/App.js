@@ -1,28 +1,40 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import FullList from "./FullItem"
+import "./App.css"
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+    state = {
+        List: this.props.list
+    };
+    ListSearch=(e)=>{
+       this.UpdateList(this.refs.inputSearch.value)
+    };
+    UpdateList=(value)=>{
+        let newList=this.props.list.filter( (item)=>item.name.toLowerCase().includes(value.toLowerCase()));
+        this.setState({
+            List:newList
+        })
+    };
+    render() {
+        let arr;
+        arr = this.state.List.map((item, index) =>
+            <FullList key={index}
+                      item={item}
+            />
+        );
+        return (
+            <div className="mainDiv">
+                <div className="NameAutor">By Nikita Donskoy</div>
+                <input type="text" onChange={this.ListSearch}placeholder="Search items..." size="30" ref="inputSearch" className="ListSearch"/>
+                <ul className="ulList">{arr}</ul>
+            </div>
+
+        )
+    }
+
+
 }
+
 
 export default App;

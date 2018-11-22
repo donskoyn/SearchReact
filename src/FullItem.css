@@ -1,0 +1,11 @@
+.itemLi{
+    border: 1px solid black;
+width: 400px;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    list-style-type:none;
+}
+.itemH1{
+    border-bottom:1px solid black ;
+}

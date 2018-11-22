@@ -1,3 +1,29 @@
+
+.NameAutor{
+  border-bottom: 1px solid black;
+  position: relative;
+  left: 400px;
+top: 40px;
+padding-left: 10px;
+  font-size: 20px;
+  width: 300px;
+}
+.mainDiv{
+  margin-left: 100px;
+}
+.ulList{
+  margin-top: 60px;
+}
+.ListSearch,textarea{
+  font-size: 20px;
+  font-family: Calibri;
+  line-height: 1em;
+  position: relative;
+  top: 10px;
+  left: 40px;
+border-radius: 5px;
+  outline: 0;
+}
 .App {
   text-align: center;
 }
